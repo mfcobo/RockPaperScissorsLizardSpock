@@ -27,10 +27,10 @@ public class RockPaperScissorsLizardSpock extends Frame {
     private Dialog dialog;
     private Button dialogButton;
     private Label dialogLabel;
-    int userSelected;
-    int compSelected;
-    int userScore;
-    int compScore;
+    private int userSelected;
+    private int compSelected;
+    private int userScore;
+    private int compScore;
 
     public RockPaperScissorsLizardSpock(){
     	setLayout(new FlowLayout());
@@ -54,8 +54,8 @@ public class RockPaperScissorsLizardSpock extends Frame {
     	lizard = new Checkbox("Lizard",choices,false);
     	spock = new Checkbox("Spock",choices,false);
 
-		results = new TextArea("Results:",5,25); 
-		results.setEditable(false);
+	results = new TextArea("Results:",5,25); 
+	results.setEditable(false);
     	gameOn = new Button("RockPaperScissorsLizardSpock");
     	playerScore = new Label("Player's Score      ");
     	computerScore = new Label("Computer's Score");
@@ -73,7 +73,7 @@ public class RockPaperScissorsLizardSpock extends Frame {
     	dialogButton.setSize(60,40);
     	dialogLabel = new Label();
 
-		dialog.setSize(230,100);
+	dialog.setSize(230,100);
     	dialog.add(dialogLabel);
     	dialog.add(dialogButton);
     	
@@ -101,7 +101,7 @@ public class RockPaperScissorsLizardSpock extends Frame {
         gameOn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-            	checkBox();
+            	checkBox();//check for the winner
             	results.setText("Results:\nPlayer chose " + choice[userSelected] +"\n" + "Computer chose "+ choice[compSelected] + "\n\n");
             	if(result == 0){
             		results.append("IT'S A TIE!");
